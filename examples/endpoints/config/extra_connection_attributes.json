@@ -1,0 +1,26 @@
+{
+  "TableCount": "1",
+  "Tables": [
+    {
+      "TableName": "",
+      "TablePath": "import/table_name/",
+      "TableOwner": "import",
+      "TableColumns": [
+        {
+          "ColumnName": "id",
+          "ColumnType": "STRING",
+          "ColumnNullable": "false",
+          "ColumnIsPk": "true",
+          "ColumnLength": "25"
+        },
+        {
+          "ColumnName": "name_value",
+          "ColumnType": "STRING",
+          "ColumnNullable": "false",
+          "ColumnLength": "20"
+        }
+      ],
+      "TableColumnsTotal": "2"
+    }
+  ]
+}

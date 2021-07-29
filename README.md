@@ -46,10 +46,71 @@ pef
 ```
 </details>
 
+<details>
+  <summary>AWS DMS Endpoints:</summary>
+
+```hcl
+module "source_endpoint" {
+  source = "github.com/kleytonhsantos/terraform-aws-dms//modules/endpoints?ref=v1.0.1"
+
+  create = true
+
+  endpoint_id                 = "replication-1.example.com"
+  engine_name                 = "mysql"
+  server_name                 = "database01.example.com"
+  port                        = 3306
+  username                    = root
+  password                    = "root123"
+  database_name               = "database_example"
+  extra_connection_attributes = file("./config/extra_connection_attributes.json")
+
+  tags = var.tags
+}
+
+module "target_endpoint" {
+  source = "github.com/kleytonhsantos/terraform-aws-dms//modules/endpoints?ref=v1.0.1"
+
+  create = true
+
+  endpoint_id   = "replication-1.example.com"
+  engine_name   = "s3"
+  endpoint_type = "target"
+
+  s3_settings = [{
+    bucket_name             = s3.example.com"
+    compression_type        = "GZIP"
+  }]
+
+  /* Examples
+  mongodb_settings = [{
+    auth_source = "mongo-test.example.com"
+  }]
+
+  kinesis_settings = [{
+    message_format = "json-unformatted"
+  }]
+
+  kafka_settings = [{
+    broker_name = "ec2-12-345-678-901.compute-1.amazonaws.com:2345,ec2-12-345-678-901.compute-1.amazonaws.com:9876"
+  }]
+
+  elasticsearch_settings = [{
+    endpoint_uri = "test.elastsearch.example.com"
+    service_access_role_arn = "arn:aws:iam::123456789012:role/aws-service-role/es.amazonaws.com/AWSServiceRoleForAmazonElasticsearchService"
+  }]
+  */
+
+  tags = var.tags
+}
+```
+</details>
+
 ## Examples
 
 - [certificates](https://github.com/kleytonhsantos/terraform-aws-dms/tree/main/examples/certificates) - Module built to import certificates to Amazon Web Service DMS.
 - [database_migration_tasks](https://github.com/kleytonhsantos/terraform-aws-dms/tree/main/examples/database_migration_tasks) - The module builds the Amazon Web Service DMS migration task.
+- [AWS DMS Endpoints](https://github.com/kleytonhsantos/terraform-aws-dms/tree/main/examples/endpoints) - The module creates endpoints for DMS migration.
+
 ## Authors
 
 Module is maintained by [Kleyton Santos](https://github.com/kleytonhsantos) with help from [these awesome contributors](https://github.com/kleytonhsantos/terraform-aws-dms/graphs/contributors).

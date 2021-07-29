@@ -105,11 +105,52 @@ module "target_endpoint" {
 ```
 </details>
 
+<details>
+  <summary>AWS DMS AWS DMS Event Subscription:</summary>
+
+```hcl
+module "event_subscription" {
+ source = "github.com/kleytonhsantos/terraform-aws-dms//modules/event_subscription?ref=v1.0.1"
+
+  create = true
+
+  name             = "example1"
+  sns_topic_arn    = arn:aws:sns:us-east-1:123456789012:dms
+  source_type      = "replication-instance"
+  source_ids       = [example01]
+  event_categories = ["creation", "failure"]
+
+  tags = var.tags
+}
+```
+</details>
+
+<details>
+  <summary>AWS DMS AWS DMS Replication Instance:</summary>
+
+```hcl
+module "replication_instances" {
+  source = "github.com/kleytonhsantos/terraform-aws-dms//modules/replication_instances?ref=v1.0.1"
+
+  create = true
+
+  replication_instance_id     = "name"
+  vpc_security_group_ids      = "vpc-00b000f00"
+  replication_subnet_group_id = "test_replication"
+  availability_zone           = "us-east-1a"
+
+  tags = var.tags
+}
+```
+</details>
+
 ## Examples
 
 - [certificates](https://github.com/kleytonhsantos/terraform-aws-dms/tree/main/examples/certificates) - Module built to import certificates to Amazon Web Service DMS.
 - [database_migration_tasks](https://github.com/kleytonhsantos/terraform-aws-dms/tree/main/examples/database_migration_tasks) - The module builds the Amazon Web Service DMS migration task.
 - [AWS DMS Endpoints](https://github.com/kleytonhsantos/terraform-aws-dms/tree/main/examples/endpoints) - The module creates endpoints for DMS migration.
+- [AWS DMS Event Subscription](https://github.com/kleytonhsantos/terraform-aws-dms/tree/main/examples/event_subscription) - The module creates an event on SNS for AWS DMS.
+- [AWS DMS Replication Instance](https://github.com/kleytonhsantos/terraform-aws-dms/tree/main/examples/replication_instances) - The module creates an replication instance for AWS DMS.
 
 ## Authors
 

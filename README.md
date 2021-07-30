@@ -176,6 +176,7 @@ module "subnet_groups" {
 - [AWS DMS Event Subscription](https://github.com/kleytonhsantos/terraform-aws-dms/tree/main/examples/event_subscription) - The module creates an event on SNS for AWS DMS.
 - [AWS DMS Replication Instance](https://github.com/kleytonhsantos/terraform-aws-dms/tree/main/examples/replication_instances) - The module creates an replication instance for AWS DMS.
 - [AWS DMS Subnet Groups](https://github.com/kleytonhsantos/terraform-aws-dms/tree/main/examples/subnet_groups) - The module builds the DMS subnets.
+- [AWS DMS Complet](https://github.com/kleytonhsantos/terraform-aws-dms/tree/main/examples/subnet_groups) - Complete.
 
 ## Authors
 

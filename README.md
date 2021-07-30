@@ -144,6 +144,30 @@ module "replication_instances" {
 ```
 </details>
 
+<details>
+  <summary>AWS DMS Subnet Groups:</summary>
+
+```hcl
+module "subnet_groups" {
+
+ source = "github.com/kleytonhsantos/terraform-aws-dms//modules/subnet_groups?ref=v1.0.1"
+
+  create = true
+
+  replication_subnet_group_description = "Example subnet groups for DMS"
+  replication_subnet_group_id          = "Example subnet groups for DMS"
+
+  subnet_ids = [
+    subnet-0g2g5555g4g7g8g9w
+    subnet-0g2g5555g4g7g8g9g
+  ]
+
+  tags = var.tags
+
+}
+```
+</details>
+
 ## Examples
 
 - [certificates](https://github.com/kleytonhsantos/terraform-aws-dms/tree/main/examples/certificates) - Module built to import certificates to Amazon Web Service DMS.
@@ -151,6 +175,7 @@ module "replication_instances" {
 - [AWS DMS Endpoints](https://github.com/kleytonhsantos/terraform-aws-dms/tree/main/examples/endpoints) - The module creates endpoints for DMS migration.
 - [AWS DMS Event Subscription](https://github.com/kleytonhsantos/terraform-aws-dms/tree/main/examples/event_subscription) - The module creates an event on SNS for AWS DMS.
 - [AWS DMS Replication Instance](https://github.com/kleytonhsantos/terraform-aws-dms/tree/main/examples/replication_instances) - The module creates an replication instance for AWS DMS.
+- [AWS DMS Subnet Groups](https://github.com/kleytonhsantos/terraform-aws-dms/tree/main/examples/subnet_groups) - The module builds the DMS subnets.
 
 ## Authors
 

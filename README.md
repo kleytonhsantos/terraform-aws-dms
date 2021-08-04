@@ -7,7 +7,7 @@ AWS Database Migration Service (AWS DMS) is a cloud service that makes it easy t
 ## Usage
 
 <details>
-  <summary>Certificates:</summary>
+  <summary>AWS DMS Certificates:</summary>
 
 ```hcl
 module "certificates" {
@@ -24,7 +24,7 @@ module "certificates" {
 </details>
 
 <details>
-  <summary>Database Migration Tasks:</summary>
+  <summary>AWS DMS Database Migration Tasks:</summary>
 
 ```hcl
 module "migration_tasks" {
@@ -170,13 +170,13 @@ module "subnet_groups" {
 
 ## Examples
 
-- [certificates](https://github.com/kleytonhsantos/terraform-aws-dms/tree/main/examples/certificates) - Module built to import certificates to Amazon Web Service DMS.
-- [database_migration_tasks](https://github.com/kleytonhsantos/terraform-aws-dms/tree/main/examples/database_migration_tasks) - The module builds the Amazon Web Service DMS migration task.
+- [AWS DMS Certificates](https://github.com/kleytonhsantos/terraform-aws-dms/tree/main/examples/certificates) - Module built to import certificates to Amazon Web Service DMS.
+- [AWS DMS Database Migration Tasks](https://github.com/kleytonhsantos/terraform-aws-dms/tree/main/examples/database_migration_tasks) - The module builds the Amazon Web Service DMS migration task.
 - [AWS DMS Endpoints](https://github.com/kleytonhsantos/terraform-aws-dms/tree/main/examples/endpoints) - The module creates endpoints for DMS migration.
 - [AWS DMS Event Subscription](https://github.com/kleytonhsantos/terraform-aws-dms/tree/main/examples/event_subscription) - The module creates an event on SNS for AWS DMS.
 - [AWS DMS Replication Instance](https://github.com/kleytonhsantos/terraform-aws-dms/tree/main/examples/replication_instances) - The module creates an replication instance for AWS DMS.
 - [AWS DMS Subnet Groups](https://github.com/kleytonhsantos/terraform-aws-dms/tree/main/examples/subnet_groups) - The module builds the DMS subnets.
-- [AWS DMS Complet](https://github.com/kleytonhsantos/terraform-aws-dms/tree/main/examples/subnet_groups) - Complete.
+- [AWS DMS Complete](https://github.com/kleytonhsantos/terraform-aws-dms/tree/main/examples/subnet_groups) - Complete.
 
 ## Authors
 
@@ -184,4 +184,4 @@ Module is maintained by [Kleyton Santos](https://github.com/kleytonhsantos) with
 
 ## License
 
-Apache 2 Licensed. See [LICENSE](https://github.com/kleytonhsantos/terraform-aws-dms/LICENSE) for full details.
+Apache 2 Licensed. See [LICENSE](https://github.com/kleytonhsantos/terraform-aws-dms/blob/main/LICENSE) for full details.

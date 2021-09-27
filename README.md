@@ -106,7 +106,7 @@ module "target_endpoint" {
 </details>
 
 <details>
-  <summary>AWS DMS AWS DMS Event Subscription:</summary>
+  <summary>AWS DMS Event Subscription:</summary>
 
 ```hcl
 module "event_subscription" {
@@ -126,7 +126,7 @@ module "event_subscription" {
 </details>
 
 <details>
-  <summary>AWS DMS AWS DMS Replication Instance:</summary>
+  <summary>AWS DMS Replication Instance:</summary>
 
 ```hcl
 module "replication_instances" {

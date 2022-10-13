@@ -90,4 +90,5 @@ resource "aws_dms_endpoint" "this" {
   }
 
   tags = var.tags
+  }
 }

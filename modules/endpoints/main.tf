@@ -37,6 +37,7 @@ resource "aws_dms_endpoint" "this" {
       parquet_version                  = lookup(s3.value, "parquet_version", "parquet-1-0")
       enable_statistics                = lookup(s3.value, "enable_statistics", true)
       preserve_transactions            = lookup(s3.value, "preserve_transactions", false)
+    }
   }
 
   dynamic "mongodb_settings" {
@@ -90,5 +91,4 @@ resource "aws_dms_endpoint" "this" {
   }
 
   tags = var.tags
-  }
 }

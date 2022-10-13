@@ -29,6 +29,7 @@ resource "aws_dms_endpoint" "this" {
       csv_delimiter             = lookup(s3.value, "csv_delimiter", ",")
       csv_row_delimiter         = lookup(s3.value, "csv_row_delimiter", null)
       date_partition_enabled    = lookup(s3.value, "date_partition_enabled", false)
+      data_format               = lookup(s3.value, "data_format", "csv")
     }
   }
 

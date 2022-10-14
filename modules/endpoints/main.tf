@@ -22,13 +22,21 @@ resource "aws_dms_endpoint" "this" {
     content {
       bucket_name = s3.value["bucket_name"]
 
-      bucket_folder             = lookup(s3.value, "bucket_folder", null)
-      external_table_definition = lookup(s3.value, "external_table_definition", null)
-      service_access_role_arn   = lookup(s3.value, "service_access_role_arn", null)
-      compression_type          = lookup(s3.value, "compression_type", "NONE")
-      csv_delimiter             = lookup(s3.value, "csv_delimiter", ",")
-      csv_row_delimiter         = lookup(s3.value, "csv_row_delimiter", null)
-      date_partition_enabled    = lookup(s3.value, "date_partition_enabled", false)
+      bucket_folder                    = lookup(s3.value, "bucket_folder", null)
+      external_table_definition        = lookup(s3.value, "external_table_definition", null)
+      service_access_role_arn          = lookup(s3.value, "service_access_role_arn", null)
+      compression_type                 = lookup(s3.value, "compression_type", "NONE")
+      csv_delimiter                    = lookup(s3.value, "csv_delimiter", ",")
+      csv_row_delimiter                = lookup(s3.value, "csv_row_delimiter", null)
+      date_partition_enabled           = lookup(s3.value, "date_partition_enabled", false)
+      data_format                      = lookup(s3.value, "data_format", "csv")
+      date_partition_delimiter         = lookup(s3.value, "date_partition_delimiter", "NONE")
+      date_partition_sequence          = lookup(s3.value, "date_partition_sequence", "YYYYMMDD")
+      include_op_for_full_load         = lookup(s3.value, "include_op_for_full_load", false)
+      parquet_timestamp_in_millisecond = lookup(s3.value, "parquet_timestamp_in_millisecond", false)
+      parquet_version                  = lookup(s3.value, "parquet_version", "parquet-1-0")
+      enable_statistics                = lookup(s3.value, "enable_statistics", true)
+      preserve_transactions            = lookup(s3.value, "preserve_transactions", false)
     }
   }
 

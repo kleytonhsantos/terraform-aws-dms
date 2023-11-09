@@ -17,7 +17,7 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [aws_dms_s3_endpoint.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/dms_s3_endpoint) | resource |
+| [aws_dms_dlt_s3_endpoint.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/dms_s3_endpoint) | resource |
 
 ## Inputs
 
